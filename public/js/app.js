@@ -7,7 +7,7 @@ fetch('http://puzzle.mead.io/puzzle').then( (response) => {
     })
 })
 
-fetch('http://localhost:3000/weather?address=!').then( (response) => {
+fetch('/weather?address=!').then( (response) => {
     response.json().then((data) => {
         if (data.errror) {
             console.log(data.error)
@@ -31,7 +31,7 @@ const location = search.value
 
 messageOne.textContent = 'Loading...'
 messageTwo.textContent = ''
-fetch('http://localhost:3000/weather?address=' + location).then( (response) => {
+fetch('/weather?address=' + location).then( (response) => {
     response.json().then((data) => {
         if (data.errror) {
             messageOne.textContent = data.error
